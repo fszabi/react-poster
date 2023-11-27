@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+
+@layer base {
+  :root {
+    --neutral-700: #404040;
+    --primary-400: #ffaf02;
+  }
+
+  body {
+    @apply from-[#441ec8] to-[#704cde]
+    bg-gradient-to-tl h-screen text-slate-100 font-sans;
+  }
+
+  @supports (scrollbar-color: var(--primary-400) var(--neutral-700)) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-400) var(--neutral-700);
+    }
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    background: var(--neutral-700);
+    width: 0.5rem;
+  }
+
+  *::-webkit-scrollbar-track {
+    margin-block: 0.5rem;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary-400);
+    border-radius: 100vw;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+
+  picture {
+    @apply block align-middle;
+  }
+
+  picture,
+  svg {
+    @apply max-w-full h-auto;
+  }
+}
+
+@tailwind components;
+
+@layer components {
+  .container {
+    @apply w-[min(100%-2rem,_80rem)] mx-auto;
+  }
+}
+
+@tailwind utilities;
